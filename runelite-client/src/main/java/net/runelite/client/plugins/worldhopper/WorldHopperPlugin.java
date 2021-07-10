@@ -79,6 +79,7 @@ import net.runelite.client.game.WorldService;
 import net.runelite.client.input.KeyManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.plugins.deecat.Utility;
 import net.runelite.client.plugins.worldhopper.ping.Ping;
 import net.runelite.client.ui.ClientToolbar;
 import net.runelite.client.ui.NavigationButton;
@@ -544,21 +545,26 @@ public class WorldHopperPlugin extends Plugin
 			 */
 			if (previous)
 			{
+				/*
 				worldIdx--;
 
 				if (worldIdx < 0)
 				{
 					worldIdx = worlds.size() - 1;
-				}
+				}*/
+				worldIdx = Utility.rand(0,worlds.size());
 			}
 			else
 			{
+				worldIdx = 29;
+				/*
 				worldIdx++;
 
 				if (worldIdx >= worlds.size())
 				{
 					worldIdx = 0;
 				}
+				 */
 			}
 
 			world = worlds.get(worldIdx);
